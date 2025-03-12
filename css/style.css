@@ -1,0 +1,188 @@
+:root{
+    --color-beige: #F5ECE3;
+    --color-white: #FFFFFF;
+    --color-grey: #555555;
+
+    --font-family-base:'Montserrat', sans-serif;
+    --transition-duration: 0.2s; /*Время, за которое происходит анимационный переход: a button input */
+}
+
+body {
+    background:var(--color-beige);
+    font-family: 'Montserrat', sans-serif;
+    max-width: 1900px;
+    margin-top:0px
+}
+.navigation {
+    max-width: 1300px;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--color-white);
+    display: flex;
+    padding-top: 51px;
+    padding-left: 70px;
+    padding-right: 70px;
+    font-size: 14px;
+    /* padding-inline: 30px; Нужен?*/
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.navigation-list{
+    max-width: 300px;
+    align-items: center;
+    display: none;
+    gap: 47px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  
+}
+
+.bourger{
+    width: 22px;
+
+}
+
+.bourger span{
+    display: block;
+    height: 1px;
+    background: var(--color-white);
+
+}
+.bourger span+span {
+    margin-top: 10px;
+}
+
+.navigation-search{
+    display: none;
+    align-items: center;
+    gap: 20px;
+}
+.navigation-list a, 
+.contacts a {
+    text-decoration: none; 
+    color: inherit; 
+}
+.navbag{
+    display: flex;
+}
+
+.navigation-list a:hover, 
+.contacts a:hover {
+    text-decoration: none; 
+    color: inherit; 
+}
+header {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.bold-name{
+    font-weight: bold;
+}
+.contacts{
+    padding-right: 48px;
+}
+.search-icon, .bag-icon, .man-icon, .navbag-icon{
+    width: 14px;
+    height: 14px;
+    gap: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    align-items: center;
+}
+
+.navbag-icon{
+    display: flex;
+}
+.navbag-icon{
+    background-image: url(../images/navbag-icon.svg);
+}
+.search-icon{
+    background-image: url(../images/search-icon.svg);
+}
+.bag-icon {
+    background-image: url(../images/bag-icon.svg);
+}
+.man-icon{
+    background-image: url(../images/man-icon.svg);
+}
+
+.nav-section{
+    background-image: url(../images/Capsule_Collection_photo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.visually-hidden{
+    justify-content: space-between;
+}
+.nav-text{
+    color: white;
+    size: 48px;
+}
+
+/* От 600 и больше */
+@media (min-width: 600px){
+/* .navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px; 
+    position: relative;
+    }
+
+.navigation-list{
+    display: none;
+}
+
+.navigation h1 {
+    position: absolute;
+    left: 50%;
+    font-size: 20px; 
+    }
+    .navigation-search{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        } */
+        
+        .bourger{
+            display: none;
+        }
+        .navigation-list, .navigation-search{
+            display: flex;
+        }
+        .navbag{
+            display: none;
+        }
+}
+@media (min-width: 370px){
+    .bourger {
+        padding-right: 10px; /* Отступ справа от бургера */
+    }
+
+    .navbag {
+        padding-left: 10px; /* Отступ слева от корзины */
+    }
+}
+    
+    
