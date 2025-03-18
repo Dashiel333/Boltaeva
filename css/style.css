@@ -1,10 +1,16 @@
 :root{
     --color-beige: #F5ECE3;
+    --color-dark-beige: #EEE4DA;
     --color-white: #FFFFFF;
     --color-grey: #555555;
 
+
     --font-family-base:'Montserrat', sans-serif;
     --transition-duration: 0.2s; /*Время, за которое происходит анимационный переход: a button input */
+    
+    --product-card-width: 310px;
+    --product-card-height: 430px;
+    --gap: 20px;
 }
 
 body {
@@ -135,10 +141,86 @@ header {
 .visually-hidden{
     justify-content: space-between;
 }
-.nav-text{
-    color: white;
-    size: 48px;
+.carousel-indicators{
+    position: absolute;
+    bottom: 48px;
+    justify-content: center;
+    transform: translateX(-50%);
 }
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Карти товарів */
+.cards{
+    max-width: 1300px;
+    padding-top: 70px;
+    margin: 0 auto;
+}
+.product-grid{
+    display: grid;
+    margin: 0 auto;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--gap);
+    position: relative;
+
+}
+
+.product-card{
+    max-width: 310px;
+    height: 430px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-color: var(--color-dark-beige);
+    flex-direction: column;
+    
+}
+
+
+.brows-logo {
+    width: 100%; 
+    height: auto;
+}
+
+
+.brows-text {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;               /*Нужно проверить */
+    padding: 0 15px;
+    color: var(--color-grey);
+    margin-top: auto;
+    position: absolute;
+    bottom: 21px;
+    padding-left: 21px;
+    padding-right: 24px;
+}
+.brows-text p{
+    font-size: 16px;
+
+}
+
+.care{
+    background-image: url(../images/care-logo.png);
+}
+.care-text{
+    display: flex;
+    color: var(--color-grey);
+    font-size: 48px;
+    padding-left: 30px;
+    position: absolute;
+    bottom: -23px;
+}
+
+
+
 
 /* От 600 и больше */
 @media (min-width: 600px){
@@ -174,6 +256,12 @@ header {
         .navbag{
             display: none;
         }
+
+        .cards {
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+
 }
 @media (min-width: 370px){
     .bourger {
@@ -183,6 +271,15 @@ header {
     .navbag {
         padding-left: 10px; /* Отступ слева от корзины */
     }
+    .cards {
+        grid-template-rows: repeat(1, 1fr);
+    }
 }
     
+@media (min-width: 1240px){
+    .cards {
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+}
     
