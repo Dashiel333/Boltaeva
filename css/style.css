@@ -1,24 +1,26 @@
-:root{
+:root {
     --color-beige: #F5ECE3;
     --color-dark-beige: #EEE4DA;
     --color-white: #FFFFFF;
     --color-grey: #555555;
 
 
-    --font-family-base:'Montserrat', sans-serif;
-    --transition-duration: 0.2s; /*Время, за которое происходит анимационный переход: a button input */
-    
+    --font-family-base: 'Montserrat', sans-serif;
+    --transition-duration: 0.2s;
+    /*Время, за которое происходит анимационный переход: a button input */
+
     --product-card-width: 310px;
     --product-card-height: 430px;
     --gap: 20px;
 }
 
 body {
-    background:var(--color-beige);
+    background: var(--color-beige);
     font-family: 'Montserrat', sans-serif;
     max-width: 1900px;
-    margin-top:0px
+    margin-top: 0px
 }
+
 .navigation {
     max-width: 1300px;
     justify-content: space-between;
@@ -31,12 +33,13 @@ body {
     font-size: 14px;
     /* padding-inline: 30px; Нужен?*/
 }
-.logo{
+
+.logo {
     display: flex;
     align-items: center;
 }
 
-.navigation-list{
+.navigation-list {
     max-width: 300px;
     align-items: center;
     display: none;
@@ -44,43 +47,47 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-  
+
 }
 
-.bourger{
+.bourger {
     width: 22px;
 
 }
 
-.bourger span{
+.bourger span {
     display: block;
     height: 1px;
     background: var(--color-white);
 
 }
+
 .bourger span+span {
     margin-top: 10px;
 }
 
-.navigation-search{
+.navigation-search {
     display: none;
     align-items: center;
     gap: 20px;
 }
-.navigation-list a, 
+
+.navigation-list a,
 .contacts a {
-    text-decoration: none; 
-    color: inherit; 
+    text-decoration: none;
+    color: inherit;
 }
-.navbag{
+
+.navbag {
     display: flex;
 }
 
-.navigation-list a:hover, 
+.navigation-list a:hover,
 .contacts a:hover {
-    text-decoration: none; 
-    color: inherit; 
+    text-decoration: none;
+    color: inherit;
 }
+
 header {
     display: flex;
     justify-content: center;
@@ -90,13 +97,19 @@ header {
     left: 0;
     z-index: 10;
 }
-.bold-name{
+
+.bold-name {
     font-weight: bold;
 }
-.contacts{
+
+.contacts {
     padding-right: 48px;
 }
-.search-icon, .bag-icon, .man-icon, .navbag-icon{
+
+.search-icon,
+.bag-icon,
+.man-icon,
+.navbag-icon {
     width: 14px;
     height: 14px;
     gap: 25px;
@@ -109,23 +122,27 @@ header {
     align-items: center;
 }
 
-.navbag-icon{
+.navbag-icon {
     display: flex;
 }
-.navbag-icon{
+
+.navbag-icon {
     background-image: url(../images/navbag-icon.svg);
 }
-.search-icon{
+
+.search-icon {
     background-image: url(../images/search-icon.svg);
 }
+
 .bag-icon {
     background-image: url(../images/bag-icon.svg);
 }
-.man-icon{
+
+.man-icon {
     background-image: url(../images/man-icon.svg);
 }
 
-.nav-section{
+.nav-section {
     background-image: url(../images/Capsule_Collection_photo.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -138,13 +155,15 @@ header {
     position: relative;
 }
 
-.visually-hidden{
+.visually-hidden {
+    display: flex;
     justify-content: space-between;
 }
-.carousel-indicators{
+
+.carousel-indicators {
     position: absolute;
     bottom: 48px;
-    justify-content: center;
+    justify-content: space-between;
     transform: translateX(-50%);
 }
 
@@ -156,44 +175,44 @@ header {
     align-items: center;
     justify-content: center;
 }
+
 /* Карти товарів */
-.cards{
+.cards {
     max-width: 1300px;
     padding-top: 70px;
     margin: 0 auto;
 }
-.product-grid{
+
+.product-grid {
     display: grid;
     margin: 0 auto;
     justify-content: center;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    /*auto-fit, minmax Автоматический перенос карт без @media */
     grid-template-rows: repeat(3, 1fr);
     gap: var(--gap);
     position: relative;
 
 }
 
-.product-card{
+.product-card {
     max-width: 310px;
     height: 430px;
     position: relative;
     background-repeat: no-repeat;
     background-color: var(--color-dark-beige);
     flex-direction: column;
-    
 }
-
 
 .brows-logo {
-    width: 100%; 
+    width: 100%;
     height: auto;
 }
-
 
 .brows-text {
     display: flex;
     justify-content: space-between;
-    width: 80%;               /*Нужно проверить */
+    width: 80%;/*Нужно проверить */
     padding: 0 15px;
     color: var(--color-grey);
     margin-top: auto;
@@ -202,15 +221,17 @@ header {
     padding-left: 21px;
     padding-right: 24px;
 }
-.brows-text p{
+
+.brows-text p {
     font-size: 16px;
 
 }
 
-.care{
+.care {
     background-image: url(../images/care-logo.png);
 }
-.care-text{
+
+.care-text {
     display: flex;
     color: var(--color-grey);
     font-size: 48px;
@@ -219,12 +240,18 @@ header {
     bottom: -23px;
 }
 
+.beauty {
+    background-image: url(../images/beauty-logo.png);
+}
 
+.brows {
+    background-image: url(../images/brows-logo.png);
+}
 
 
 /* От 600 и больше */
-@media (min-width: 600px){
-/* .navigation{
+@media (min-width: 600px) {
+    /* .navigation{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -246,40 +273,57 @@ header {
         align-items: center;
         gap: 20px;
         } */
-        
-        .bourger{
-            display: none;
-        }
-        .navigation-list, .navigation-search{
-            display: flex;
-        }
-        .navbag{
-            display: none;
-        }
 
-        .cards {
-            grid-template-rows: repeat(2, 1fr);
-        }
-
-
-}
-@media (min-width: 370px){
     .bourger {
-        padding-right: 10px; /* Отступ справа от бургера */
+        display: none;
+    }
+
+    .navigation-list,
+    .navigation-search {
+        display: flex;
     }
 
     .navbag {
-        padding-left: 10px; /* Отступ слева от корзины */
+        display: none;
     }
+
+    .cards {
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 628px) {
+    .product-card {
+        display: none;
+    }
+
+    .product-card.care,
+    .product-card.beauty,
+    .product-card.brows {
+        display: flex;
+    }
+}
+
+@media (min-width: 370px) {
+    .bourger {
+        padding-right: 10px;
+        /* Отступ справа от бургера */
+    }
+
+    .navbag {
+        padding-left: 10px;
+        /* Отступ слева от корзины */
+    }
+
     .cards {
         grid-template-rows: repeat(1, 1fr);
     }
 }
-    
-@media (min-width: 1240px){
+
+@media (min-width: 1240px) {
     .cards {
         grid-template-rows: repeat(3, 1fr);
     }
 
 }
-    
