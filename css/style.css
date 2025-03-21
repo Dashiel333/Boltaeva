@@ -160,6 +160,11 @@ header {
     justify-content: space-between;
 }
 
+#carouselExampleIndicators {
+    width: 1330px;
+    max-width: 100%;
+    margin: 0 auto;
+}
 
 .carousel-indicators {
     position: absolute;
@@ -168,9 +173,12 @@ header {
     transform: translateX(-50%);
 }
 .carousel-button{
-    position: relative;
+    position: absolute;
     width: 100%;
-    height: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .carousel-control-prev {
@@ -261,30 +269,7 @@ header {
 
 
 /* От 600 и больше */
-@media (min-width: 600px) {
-    /* .navigation{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 30px; 
-    position: relative;
-    }
-
-.navigation-list{
-    display: none;
-}
-
-.navigation h1 {
-    position: absolute;
-    left: 50%;
-    font-size: 20px; 
-    }
-    .navigation-search{
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        } */
-
+@media (min-width: 668px) {
     .bourger {
         display: none;
     }
@@ -321,7 +306,6 @@ header {
         padding-right: 10px;
         /* Отступ справа от бургера */
     }
-
     .navbag {
         padding-left: 10px;
         /* Отступ слева от корзины */
