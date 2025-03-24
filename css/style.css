@@ -165,12 +165,28 @@ header {
     max-width: 100%;
     margin: 0 auto;
 }
-
+.carousel-inner{
+    position: relative;
+}
+.carousel-item img{
+    max-width: 386px;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+}
 .carousel-indicators {
+    display: flex;
     position: absolute;
     bottom: 48px;
-    justify-content: space-between;
     transform: translateX(-50%);
+    left: 50%;
+}
+.carousel-indicators button{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    margin: 8px;
 }
 .carousel-button{
     position: absolute;
@@ -193,6 +209,19 @@ header {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
+}
+.carousel-control-prev, 
+.carousel-control-next {
+    width: 63px; 
+    height: 45px; 
+    border-radius: 60%;
+    background-color: #8888884D;
+    backdrop-filter: blur(14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 10px;
 }
 
 /* Карти товарів */
