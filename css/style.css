@@ -104,6 +104,7 @@ header {
 
 .contacts {
     padding-right: 48px;
+    margin: 0;
 }
 
 .search-icon,
@@ -177,7 +178,7 @@ header {
 .carousel-indicators {
     display: flex;
     position: absolute;
-    bottom: 48px;
+    bottom: 10px;
     transform: translateX(-50%);
     left: 50%;
 }
