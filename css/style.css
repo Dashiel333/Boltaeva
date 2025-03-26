@@ -4,7 +4,6 @@
     --color-white: #FFFFFF;
     --color-grey: #555555;
 
-
     --font-family-base: 'Montserrat', sans-serif;
     --transition-duration: 0.2s;
     /*Время, за которое происходит анимационный переход: a button input */
@@ -18,7 +17,10 @@ body {
     background: var(--color-beige);
     font-family: 'Montserrat', sans-serif;
     max-width: 1900px;
-    margin-top: 0px
+}
+
+.container {
+    /* write code here */
 }
 
 .navigation {
@@ -37,10 +39,12 @@ body {
     display: flex;
     align-items: center;
 }
-.capsule-text{
+
+.capsule-text {
     color: var(--color-white);
     font-family: var(--font-family-base);
 }
+
 .navigation-list {
     max-width: 300px;
     align-items: center;
@@ -54,7 +58,6 @@ body {
 
 .bourger {
     width: 22px;
-
 }
 
 .bourger span {
@@ -93,11 +96,6 @@ body {
 header {
     display: flex;
     justify-content: center;
-    /* position: absolute; */
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
 }
 
 .bold-name {
@@ -145,13 +143,16 @@ header {
     background-image: url(../images/man-icon.svg);
 }
 
-.nav-section {
+.hero {
+    min-height: 100vh;
     background-image: url(../images/Capsule_Collection_photo.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.nav-section {
     width: 100%;
-    height: 900px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,35 +165,40 @@ header {
     justify-content: space-between;
 }
 
-#carouselExampleIndicators {
+.carousel {
+    height: calc(100vh - 120px);
     width: 1330px;
     max-width: 100%;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
-.carousel-inner{
+
+.carousel-inner {
     position: relative;
 }
-.carousel-item img{
+
+.carousel-item img {
     max-width: 386px;
     display: block;
     height: auto;
     margin: 0 auto;
 }
+
 .carousel-indicators {
-    display: flex;
-    position: absolute;
-    bottom: 10px;
-    transform: translateX(-50%);
-    left: 50%;
+    bottom: 0px;
+    margin-bottom: 40px;
 }
-.carousel-indicators button{
+
+.carousel-indicators [data-bs-target] {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     border: none;
     margin: 8px;
 }
-.carousel-button{
+
+.carousel-button {
     position: absolute;
     width: 100%;
     top: 50%;
@@ -214,11 +220,12 @@ header {
     top: 50%;
     transform: translateY(-50%);
 }
-.carousel-control-prev, 
+
+.carousel-control-prev,
 .carousel-control-next {
-    width: 63px; 
-    height: 45px; 
-    border-radius: 60%;
+    width: 63px;
+    height: 45px;
+    border-radius: 60px;
     background-color: #8888884D;
     backdrop-filter: blur(14px);
     display: flex;
@@ -248,12 +255,19 @@ header {
 }
 
 .product-card {
+    display: none;
     max-width: 310px;
     height: 430px;
     position: relative;
     background-repeat: no-repeat;
     background-color: var(--color-dark-beige);
     flex-direction: column;
+}
+
+.product-card.care,
+.product-card.beauty,
+.product-card.brows {
+    display: flex;
 }
 
 .brows-logo {
@@ -264,7 +278,8 @@ header {
 .brows-text {
     display: flex;
     justify-content: space-between;
-    width: 80%;/*Нужно проверить */
+    width: 80%;
+    /*Нужно проверить */
     padding: 0 15px;
     color: var(--color-grey);
     margin-top: auto;
@@ -301,8 +316,8 @@ header {
 }
 
 
-/* От 600 и больше */
-@media (min-width: 668px) {
+/* От 768 и больше */
+@media (min-width: 768px) {
     .bourger {
         display: none;
     }
@@ -322,23 +337,17 @@ header {
 
 }
 
-@media (max-width: 628px) {
-    .product-card {
-        display: none;
-    }
 
-    .product-card.care,
-    .product-card.beauty,
-    .product-card.brows {
+@media (min-width: 576px) {
+    .product-card {
         display: flex;
     }
-}
 
-@media (min-width: 370px) {
     .bourger {
         padding-right: 10px;
         /* Отступ справа от бургера */
     }
+
     .navbag {
         padding-left: 10px;
         /* Отступ слева от корзины */
@@ -355,3 +364,11 @@ header {
     }
 
 }
+
+
+/* 
+    @media (min-width: 576px) { ... }
+    @media (min-width: 768px) { ... }
+    @media (min-width: 992px) { ... }
+    @media (min-width: 1200px) { ... }
+*/
