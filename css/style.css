@@ -4,7 +4,6 @@
     --color-white: #FFFFFF;
     --color-grey: #555555;
 
-
     --font-family-base: 'Montserrat', sans-serif;
     --transition-duration: 0.2s;
     /*Время, за которое происходит анимационный переход: a button input */
@@ -18,7 +17,10 @@ body {
     background: var(--color-beige);
     font-family: 'Montserrat', sans-serif;
     max-width: 1900px;
-    margin-top: 0px
+}
+
+.container {
+    /* write code here */
 }
 
 .container {
@@ -304,6 +306,12 @@ header {
     display: flex;
 }
 
+.product-card.care,
+.product-card.beauty,
+.product-card.brows {
+    display: flex;
+}
+
 .brows-logo {
     width: 100%;
     height: auto;
@@ -377,9 +385,8 @@ header {
         display: flex;
     }
 
-    .product-card.care,
-    .product-card.beauty,
-    .product-card.brows {
+@media (min-width: 576px) {
+    .product-card {
         display: flex;
     }
     .capsule-text{
