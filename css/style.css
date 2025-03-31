@@ -21,6 +21,10 @@ body {
     margin-top: 0px
 }
 
+.container {
+    max-width: 1300px;
+}
+
 .navigation {
     max-width: 1300px;
     height: 120px;
@@ -30,17 +34,19 @@ body {
     display: flex;
     padding-top: 51px;
     font-size: 14px;
-    /* padding-inline: 30px; Нужен?*/
+    position: relative;
 }
 
 .logo {
     display: flex;
     align-items: center;
 }
-.capsule-text{
+
+.capsule-text {
     color: var(--color-white);
     font-family: var(--font-family-base);
 }
+
 .navigation-list {
     max-width: 300px;
     align-items: center;
@@ -54,19 +60,50 @@ body {
 
 .bourger {
     width: 22px;
-
+    cursor: pointer;
 }
-
 .bourger span {
     display: block;
     height: 1px;
     background: var(--color-white);
-
 }
 
 .bourger span+span {
     margin-top: 10px;
 }
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fbe9d2;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out; /* Чтобы плавно показывалось меню */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden; /*Скрывать меню */
+    opacity: 0;
+  }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .menu.active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+
+
 
 .navigation-search {
     display: none;
@@ -93,11 +130,6 @@ body {
 header {
     display: flex;
     justify-content: center;
-    /* position: absolute; */
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
 }
 
 .bold-name {
@@ -145,13 +177,16 @@ header {
     background-image: url(../images/man-icon.svg);
 }
 
-.nav-section {
+.hero {
+    min-height: 100vh;
     background-image: url(../images/Capsule_Collection_photo.png);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 70%;
     background-size: cover;
+}
+
+.nav-section {
     width: 100%;
-    height: 900px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,35 +199,41 @@ header {
     justify-content: space-between;
 }
 
-#carouselExampleIndicators {
+.carousel {
+    height: calc(100vh - 120px);
     width: 1330px;
     max-width: 100%;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
-.carousel-inner{
+
+.carousel-inner {
     position: relative;
 }
-.carousel-item img{
+
+.carousel-item img {
     max-width: 386px;
     display: block;
     height: auto;
     margin: 0 auto;
 }
+
 .carousel-indicators {
-    display: flex;
-    position: absolute;
-    bottom: 10px;
-    transform: translateX(-50%);
-    left: 50%;
+    bottom: 0;
+    margin-bottom: 40px;
+   
 }
-.carousel-indicators button{
+
+.carousel-indicators [data-bs-target] {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     border: none;
     margin: 8px;
 }
-.carousel-button{
+
+.carousel-button {
     position: absolute;
     width: 100%;
     top: 50%;
@@ -214,11 +255,12 @@ header {
     top: 50%;
     transform: translateY(-50%);
 }
-.carousel-control-prev, 
+
+.carousel-control-prev,
 .carousel-control-next {
-    width: 63px; 
-    height: 45px; 
-    border-radius: 60%;
+    width: 63px;
+    height: 45px;
+    border-radius: 60px;
     background-color: #8888884D;
     backdrop-filter: blur(14px);
     display: flex;
@@ -230,7 +272,6 @@ header {
 
 /* Карти товарів */
 .cards {
-    max-width: 1300px;
     padding-top: 70px;
     margin: 0 auto;
 }
@@ -242,29 +283,38 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     /*auto-fit, minmax Автоматический перенос карт без @media */
     grid-template-rows: repeat(3, 1fr);
-    gap: var(--gap);
     position: relative;
+    gap: 10px;
 
 }
 
 .product-card {
+    display: none;
     max-width: 310px;
     height: 430px;
     position: relative;
     background-repeat: no-repeat;
     background-color: var(--color-dark-beige);
-    flex-direction: column;
+    flex-direction: column;   
+}
+
+.product-card.care,
+.product-card.beauty,
+.product-card.brows {
+    display: flex;
 }
 
 .brows-logo {
     width: 100%;
     height: auto;
+    object-fit: contain;
 }
 
 .brows-text {
     display: flex;
     justify-content: space-between;
-    width: 80%;/*Нужно проверить */
+    width: 80%;
+    /*Нужно проверить */
     padding: 0 15px;
     color: var(--color-grey);
     margin-top: auto;
@@ -281,6 +331,7 @@ header {
 
 .care {
     background-image: url(../images/care-logo.png);
+    background-position: center;
 }
 
 .care-text {
@@ -289,7 +340,7 @@ header {
     font-size: 48px;
     padding-left: 30px;
     position: absolute;
-    bottom: -23px;
+    bottom: 5px;
 }
 
 .beauty {
@@ -301,8 +352,8 @@ header {
 }
 
 
-/* От 600 и больше */
-@media (min-width: 668px) {
+/* От 768 и больше */
+@media (min-width: 768px) {
     .bourger {
         display: none;
     }
@@ -315,16 +366,15 @@ header {
     .navbag {
         display: none;
     }
-
     .cards {
         grid-template-rows: repeat(2, 1fr);
     }
 
 }
 
-@media (max-width: 628px) {
+@media (min-width: 628px) {
     .product-card {
-        display: none;
+        display: flex;
     }
 
     .product-card.care,
@@ -332,13 +382,14 @@ header {
     .product-card.brows {
         display: flex;
     }
-}
-
-@media (min-width: 370px) {
+    .capsule-text{
+        font-size: 36px;
+    }
     .bourger {
         padding-right: 10px;
         /* Отступ справа от бургера */
     }
+
     .navbag {
         padding-left: 10px;
         /* Отступ слева от корзины */
@@ -349,9 +400,28 @@ header {
     }
 }
 
+@media (min-width:768px){
+    .bourger {
+    width: 22px;
+
+}
+}
+
+
 @media (min-width: 1240px) {
     .cards {
         grid-template-rows: repeat(3, 1fr);
     }
 
 }
+
+
+
+
+
+/* 
+@media (min-width: 576px)
+@media (min-width: 768px)
+@media (min-width: 992px)
+@media (min-width: 1200px) 
+*/

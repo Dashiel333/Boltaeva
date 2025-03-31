@@ -4,3 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
         wrap: true // Бесконечная прокрутка
     });
 });
+
+document.querySelector(".bourger").addEventListener("click", function () {
+    document.getElementById("menu").classList.add("active");
+});
+
+document.getElementById("close").addEventListener("click", function () {
+    document.getElementById("menu").classList.remove("active");
+}); 

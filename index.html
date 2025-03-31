@@ -16,151 +16,181 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navigation">
-      <div class="bourger">
-        <span></span>
-        <span></span>
 
-      </div>
-      <ul class="navigation-list">
-        <li><a href="#">Catalog</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Delivery</a></li>
-      </ul>
-      <div class="logo">
-        <img src="images/logo_boltaeva.svg" alt="logo_boltaeva">
-      </div>
-      <div class="navbag">
-        <a href="#">
-          <button class="navbag-icon"></button>
-        </a>
-      </div>
-      <div class="navigation-search">
+  <div class="hero">
+    <div class="container">
+      <header>
+        <nav class="navigation">
+          <div class="bourger">
+            <span></span>
+            <span></span>
+            <div class="menu" id="menu">
+              <button class="close" id="close">&times;</button>
+              <ul>
+                <li><a href="#">Main page</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Delivery</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Bonus program</a></li>
+                <li><a href="#">Work process</a></li>
+                <li><a href="#">Partners</a></li>
+              </ul>
+            </div>
+          </div>
+          <ul class="navigation-list">
+            <li><a href="#">Catalog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Delivery</a></li>
+          </ul>
+          <div class="logo">
+            <img src="images/logo_boltaeva.svg" alt="logo_boltaeva">
+          </div>
+          <div class="navbag">
+            <a href="#">
+              <button class="navbag-icon"></button>
+            </a>
+          </div>
+          <div class="navigation-search">
 
-        <p class="contacts"><a href="#">Contacts</a></p>
-        <a href="#">
-          <button class="search-icon"></button>
-        </a>
-        <a href="#">
-          <button class="bag-icon"></button>
-        </a>
-        <a href="#">
-          <button class="man-icon"></button>
-        </a>
-      </div>
-    </nav>
-  </header>
+            <p class="contacts"><a href="#">Contacts</a></p>
+            <a href="#">
+              <button class="search-icon"></button>
+            </a>
+            <a href="#">
+              <button class="bag-icon"></button>
+            </a>
+            <a href="#">
+              <button class="man-icon"></button>
+            </a>
+          </div>
+        </nav>
+      </header>
+      <section class="nav-section">
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h1 class="capsule-text">Capsule Collection</h1>
+            </div>
+            <div class="carousel-item">
+              <h1 class="capsule-text">Capsule Collection</h1>
+            </div>
+            <div class="carousel-item">
+              <h1 class="capsule-text">Capsule Collection</h1>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="prev" class="active" aria-current="true" aria-label="previous">
+            <img src="./images/arrow-left.svg" alt="arrow-left">
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <img src="./images/arrow-right.svg" alt="arrow-right">
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
   <main>
-    <section class="nav-section">
-      <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <h1 class="capsule-text">Capsule Collection</h1>
+    <div class="container">
+      <section class="cards">
+        <div class="product-grid">
+          <div class="product-slider">
+            <div class="product-card care">
+              <p class="care-text">Care</p>
+            </div>
           </div>
-          <div class="carousel-item">
-            <h1 class="capsule-text">Capsule Collection</h1>
+          <div class="product-card">
+            <img class="brows-logo" src="./images/Rectangle 19.png" alt="Perfect brows_logo">
+            <div class="brows-text">
+              <p>Perfect brows</p>
+              <p> <strong>54 €</strong></p>
+            </div>
           </div>
-          <div class="carousel-item">
-            <h1 class="capsule-text">Capsule Collection</h1>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="prev" class="active" aria-current="true" aria-label="previous">
-          <img src="./images/arrow-left.svg" alt="arrow-left">
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next">
-          <img src="./images/arrow-right.svg" alt="arrow-right">
-        </button>
-      </div>
-    </section>
-    <section class="cards">
-      <div class="product-grid">
-        <div class="product-card care">
-          <p class="care-text">Care</p>
-        </div>
-        <div class="product-card">
-          <img class="brows-logo" src="./images/Rectangle 19.png" alt="Perfect brows_logo">
-          <div class="brows-text">
-            <p>Perfect brows</p>
-            <p> <strong>54 €</strong></p>
-          </div>
-        </div>
-        <div class="product-card">
+          <div class="product-card">
 
-          <img class="brows-logo" src="./images/bottle-logo.png" alt="bottle-logo">
-          <div class="brows-text">
-            <p>Perfect brows</p>
-            <p> <strong>54 €</strong></p>
+            <img class="brows-logo" src="./images/bottle-logo.png" alt="bottle-logo">
+            <div class="brows-text">
+              <p>Perfect brows</p>
+              <p> <strong>54 €</strong></p>
+            </div>
           </div>
-        </div>
-        <div class="product-card">
-          <img class="brows-logo" src="./images/eyebrows-logo.png" alt="eyebrows-logo">
-          <div class="brows-text">
-            <p>Perfect brows</p>
-            <p> <strong>54 €</strong></p>
+          <div class="product-card">
+            <img class="brows-logo" src="./images/eyebrows-logo.png" alt="eyebrows-logo">
+            <div class="brows-text">
+              <p>Perfect brows</p>
+              <p> <strong>54 €</strong></p>
+            </div>
           </div>
-        </div>
-        <div class="product-card">
-          <img class="brows-logo" src="./images/eyebrows-logo.png" alt="eyebrows-logo.png">
-          <div class="brows-text">
-            <p>Perfect brows</p>
-            <p> <strong>54 €</strong></p>
+          <div class="product-card">
+            <img class="brows-logo" src="./images/eyebrows-logo.png" alt="eyebrows-logo.png">
+            <div class="brows-text">
+              <p>Perfect brows</p>
+              <p> <strong>54 €</strong></p>
+            </div>
           </div>
-        </div>
-        <div class="product-card">
-          <img class="brows-logo" src="./images/bottle-logo.png" alt="bottle-logo">
-          <div class="brows-text">
-            <p>Perfect brows</p>
-            <p> <strong>54 €</strong></p>
+          <div class="product-card">
+            <img class="brows-logo" src="./images/bottle-logo.png" alt="bottle-logo">
+            <div class="brows-text">
+              <p>Perfect brows</p>
+              <p> <strong>54 €</strong></p>
+            </div>
           </div>
-        </div>
-        <div class="product-card">
-          <img class="brows-logo" src="./images/Rectangle 19.png" alt="bottle-logo">
-          <div class="brows-text">
-            <p>Perfect brows</p>
-            <p> <strong>54 €</strong></p>
+          <div class="product-card">
+            <img class="brows-logo" src="./images/Rectangle 19.png" alt="bottle-logo">
+            <div class="brows-text">
+              <p>Perfect brows</p>
+              <p> <strong>54 €</strong></p>
+            </div>
           </div>
-        </div>
-        <div class="product-card beauty">
-          <p class="care-text">Beauty</p>
-        </div>
-        <div class="product-card brows">
-          <p class="care-text">Brows</p>
-        </div>
-        <div class="product-card">
-          <img class="brows-logo" src="./images/eyebrows-logo.png" alt="eyebrows-logo">
-          <div class="brows-text">
-            <p>Perfect brows</p>
-            <p> <strong>54 €</strong></p>
+          <div class="product-slider">
+            <div class="product-card beauty">
+              <p class="care-text">Beauty</p>
+            </div>
           </div>
-        </div>
-        <div class="product-card">
-          <img class="brows-logo" src="./images/bottle-logo.png" alt="bottle-logo">
-          <div class="brows-text">
-            <p>Perfect brows</p>
-            <p> <strong>54 €</strong></p>
+          <div class="product-slider">
+            <div class="product-card brows">
+              <p class="care-text">Brows</p>
+            </div>
           </div>
-        </div>
-        <div class="product-card">
-          <img class="brows-logo" src="./images/Rectangle 19.png" alt="bottle-logo">
-          <div class="brows-text">
-            <p>Perfect brows</p>
-            <p> <strong>54 €</strong></p>
-          </div>
-        </div>
-      </div>
 
-    </section>
+          <div class="product-card">
+            <img class="brows-logo" src="./images/eyebrows-logo.png" alt="eyebrows-logo">
+            <div class="brows-text">
+              <p>Perfect brows</p>
+              <p> <strong>54 €</strong></p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img class="brows-logo" src="./images/bottle-logo.png" alt="bottle-logo">
+            <div class="brows-text">
+              <p>Perfect brows</p>
+              <p> <strong>54 €</strong></p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img class="brows-logo" src="./images/Rectangle 19.png" alt="bottle-logo">
+            <div class="brows-text">
+              <p>Perfect brows</p>
+              <p> <strong>54 €</strong></p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
 
 
     <section></section>
