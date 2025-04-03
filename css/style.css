@@ -34,14 +34,16 @@ body {
     width: 100%;
     color: var(--color-white);
     display: flex;
-    padding-top: 51px;
     font-size: 14px;
     position: relative;
+    align-items: center;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 5;
 }
 
 .capsule-text {
@@ -79,15 +81,51 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #fbe9d2;
+    background:var(--color-beige);
+    z-index: 10;
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out; /* Чтобы плавно показывалось меню */
+    transition: all 0.3s ease-in-out; /* Чтобы плавно показывалось меню */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     visibility: hidden; /*Скрывать меню */
-    opacity: 0;
+    opacity: 0.7;
+    font-size: 24px;
+    font-family: var(--font-family-base);
+
+  }
+
+  .menu ul{
+    list-style: none;
+    text-align: center;
+    height: 100%;
+    padding-top: 80px;
+    
+  }
+
+  .menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-grey);
+    font-size: 22px;
+    padding: 10px 0;
+}
+  .burger-nav{
+    min-height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    color: var(--color-grey);
+
+  }
+
+
+  .close {
+    color: grey;
+    opacity: 1;
   }
   .close {
     position: absolute;
@@ -102,6 +140,8 @@ body {
   .menu.active {
     transform: translateX(0);
     visibility: visible;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
   }
 
 
@@ -249,6 +289,7 @@ header {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
+
 }
 
 .carousel-control-next {
@@ -265,7 +306,7 @@ header {
     border-radius: 60px;
     background-color: #8888884D;
     backdrop-filter: blur(14px);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     border: none;
@@ -322,7 +363,6 @@ header {
     display: flex;
     justify-content: space-between;
     width: 80%;
-    /*Нужно проверить */
     padding: 0 15px;
     color: var(--color-grey);
     margin-top: auto;
@@ -370,6 +410,10 @@ header {
     .navigation-search {
         display: flex;
     }
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: flex;
+    }
 
     .navbag {
         display: none;
@@ -378,12 +422,26 @@ header {
         grid-template-rows: repeat(2, 1fr);
     }
 
+    .navigation{
+        padding-top: 51px;
+    }
+    .menu.active .logo {
+        position: absolute;
+        top: 20px; 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        z-index: 15; 
+    }
+
 }
 
 @media (min-width: 628px) {
     .product-card {
         display: flex;
     }
+    
+}
 
 @media (min-width: 576px) {
     .product-card {
@@ -392,10 +450,7 @@ header {
     .capsule-text{
         font-size: 36px;
     }
-    .bourger {
-        padding-right: 10px;
-        /* Отступ справа от бургера */
-    }
+
 
     .navbag {
         padding-left: 10px;
@@ -406,14 +461,6 @@ header {
         grid-template-rows: repeat(1, 1fr);
     }
 }
-
-@media (min-width:768px){
-    .bourger {
-    width: 22px;
-
-}
-}
-
 
 @media (min-width: 1240px) {
     .cards {
