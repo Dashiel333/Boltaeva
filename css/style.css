@@ -149,6 +149,7 @@ body {
 
 .left-nav {
     justify-content: flex-start;
+    align-items: center;
 }
 
 .right-nav {
@@ -161,12 +162,11 @@ body {
 }
 
 .burger-icons, .close{
-    width: 18px;
-    height: 18px;
+    /* width: 18px;
+    height: 18px; */
 }
 
 .close {
-    /* position: absolute; */
     top: 20px;
     left: 20px;
     background: none;
@@ -175,6 +175,10 @@ body {
     cursor: pointer;
     box-sizing: border-box;
     order: 1;
+    margin-bottom: 3px;
+}
+.burger-close{
+    order: 2;
 }
 
 .menu.active {
@@ -183,8 +187,32 @@ body {
     transition: all 0.3s ease-in-out;
     opacity: 1;
 }
-
-
+.glass{
+    margin-bottom: 7px;
+}
+.search-container {
+    /* display: none;  */
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+    background-color: var(--color-beige);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .search-container.active {
+    display: flex;
+  }
+  
+  .search-input {
+    font-size: 16px;
+    padding: 12px;
+    background-color: var(--color-beige);
+    border: none;
+    border-bottom: 2px solid #e0dcd7;
+    color: var(--color-grey);
+  }
 
 
 .navigation-search {
