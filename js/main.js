@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.querySelector(".bourger").addEventListener("click", function () {
     document.getElementById("menu").classList.add("active");
-   console.log("active"); 
+    console.log("active");
 });
 
 document.getElementById("close").addEventListener("click", function () {
     document.getElementById("menu").classList.remove("active");
-}); 
+});

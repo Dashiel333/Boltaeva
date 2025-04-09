@@ -19,6 +19,10 @@ body {
     max-width: 1900px;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 .container {
     max-width: 1300px;
@@ -201,6 +205,8 @@ body {
     align-items: center;
     background-color: var(--color-beige);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 0;
 }
 
 .search-container.active {
@@ -472,28 +478,36 @@ header {
 .ceo-comment {
     display: flex;
     align-items: center;
-    gap: 114px;
-    max-width: 1440px;
     padding-top: 70px;
     position: relative;
-    margin: 0 auto;
+    flex-direction: column;
+}
+
+.ceo-comment>div {
+    flex: 1 1 50%;
+    max-width: 50%;
 }
 
 .text-block {
     align-items: center;
     justify-content: center;
     max-width: 720px;
-
+    padding: 50px 60px;
 }
 
 .ceo-text {
     align-items: center;
     justify-content: center;
     max-width: 492px;
-
+    margin: 0 auto;
 }
-.ceo-picture{
+
+.ceo-picture {
     height: auto;
+    width: 100%;
+}
+
+.ceo-picture img {
     width: 100%;
 }
 
@@ -528,10 +542,6 @@ header {
     padding-left: 35px;
 }
 
-.ceo-picture img {
-    margin-left: calc((100vw - 1440px) / 2 * -1);
-    /*Чтобы картинка прилапала к краю */
-}
 
 /* От 768 и больше */
 @media (min-width: 768px) {
@@ -569,15 +579,17 @@ header {
         width: 120px;
         z-index: 15;
     }
+
+    .ceo-comment {
+        flex-direction: row;
+    }
 }
 
 @media (min-width: 628px) {
     .product-card {
         display: flex;
     }
-    .ceo-comment{
-        flex-direction: column;
-    }
+
     .ceo-picture {
         margin-left: 0;
     }
@@ -600,9 +612,6 @@ header {
 
     .cards {
         grid-template-rows: repeat(1, 1fr);
-    }
-    .ceo-comment{
-        flex-direction: column;
     }
 }
 
