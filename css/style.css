@@ -208,6 +208,11 @@ img {
     left: 0;
 }
 
+.icons-box{
+    display: flex;
+    align-items: center;
+    padding-left: 0.5px;
+}
 .icon-logo {
     background: none;
     border: none;
@@ -613,6 +618,7 @@ header {
 
     .ceo-comment {
         flex-direction: row;
+        align-items: center;
     }
 }
 
