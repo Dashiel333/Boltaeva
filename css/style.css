@@ -979,6 +979,42 @@ header {
 }
 
 
+.right-block{
+    align-items: center;
+    justify-content: center;
+    max-width: 492px;
+    margin: 0 auto;
+
+}
+.favorit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 197px;
+}
+.heart-icon{
+    background-image: url(../images/heart-icon.svg);
+}
+.heart-icon{
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.heart-text{
+    margin: 0;
+    font-family: var(--font-family-base);
+    font-size: 14px;
+    color: var(--color-grey);
+    padding-left: 12px;
+}
+.milk-text{
+    font-family: var(--font-family-base);
+    font-size: 48px;
+    color: var(--color-grey);
+}
+
 
 @media (min-width: 576px) {
     .product-card {
