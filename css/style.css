@@ -500,6 +500,7 @@ header {
 
 .brows-text p {
     font-size: 16px;
+    margin-bottom: 0;
 }
 
 .care {
@@ -529,6 +530,7 @@ header {
     flex-direction: column;
     padding-top: 70px;
     position: relative;
+    padding-bottom: 50px;
 }
 
 .ceo-comment>div {
@@ -538,7 +540,6 @@ header {
 .text-block {
     align-items: center;
     justify-content: center;
-    max-width: 720px;
     padding: 20px;
 }
 
@@ -701,16 +702,33 @@ header {
     align-items: center;
     display: flex;
     gap: 10px;
-    justify-content: flex-start;
+    justify-content: flex-start;  
 }
 
-.footer-icons img {
+.icons {
+    width: 48px;
+    height: 48px;
     background-color: #F5ECE3;
     border-radius: 50px;
-    padding: 12px 12px 12px 12px;
+    padding: 12px;
     max-width: fit-content;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+.facebook-logo{
+    background-image: url(../images/facebook.svg);
+}
+.inst-logo{
+    background-image: url(../images/inst.svg);
+}
+.twitter-logo{
+    background-image: url(../images/twitter.svg);
+}
+.youtube-logo{
+    background-image: url(../images/youtube.svg);
 }
 
 .footer-autograph {
@@ -771,11 +789,14 @@ header {
     display: flex;
     gap: 10px;
     justify-content: flex-start;
+    width: 36px;
+    height: 36px;
 }
 
 .icons-footer p {
     margin-bottom: 0;
 }
+
 
 .text-rights {
     display: flex;
@@ -869,7 +890,7 @@ header {
 .catalog-grid {
     margin: 0 auto;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: repeat(3, 1fr);
     position: relative;
     gap: 10px;
@@ -878,8 +899,8 @@ header {
 
 .secound-grid {
     display: flex;
-    padding-top: 15px;
-    gap: 10px;
+    padding-top: 20px;
+    gap: 20px;
 }
 
 .big-block,
@@ -892,10 +913,10 @@ header {
     display: grid;
     margin: 0 auto;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     /*auto-fit, minmax Автоматический перенос карт без @media */
     position: relative;
-    gap: 10px;
+    gap: 20px;
 }
 
 .productcat-card {
@@ -927,10 +948,10 @@ header {
     flex-direction: column;
     margin: 0 auto;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: repeat(2, 2fr);
     position: relative;
-    gap: 10px;
+    gap: 20px;
 }
 .searchcat-icon,
 .bagcat-icon,
@@ -979,12 +1000,11 @@ header {
 }
 
 
-.right-block{
+.right-blockcard{
     align-items: center;
     justify-content: center;
     max-width: 492px;
     margin: 0 auto;
-
 }
 .favorit{
     display: flex;
