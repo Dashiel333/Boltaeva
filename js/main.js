@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var myCarousel = new bootstrap.Carousel(document.querySelector("#carouselExampleIndicators"), {
-        interval: 3000, // Автопрокрутка каждые 3 сек (можно убрать)
-        wrap: true // Бесконечная прокрутка
-    });
+    const sliderBlock = document.querySelector("#carouselExampleIndicators");
+
+    if (sliderBlock) {
+        new bootstrap.Carousel(sliderBlock, {
+            interval: 3000, // Автопрокрутка каждые 3 сек (можно убрать)
+            wrap: true // Бесконечная прокрутка
+        });
+    }
+
 });
 
 document.querySelector(".bourger").addEventListener("click", function () {
@@ -52,10 +57,16 @@ console.log(toggleBtn);
 // Dark and light theme
 
 // Slider
-// $(document).ready(function(){
-//     $('.vertical-class').slick({
-//       setting-name: setting-value
-//     });
-//   });
 
 // Slider
+
+// Swiperjs
+const swiper = new Swiper('.swiper', {
+    direction: 'vertical',
+    loop: true,
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+
+// Swiperjs

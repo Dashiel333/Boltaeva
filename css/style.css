@@ -701,15 +701,16 @@ header {
     max-width: 220px;
     align-items: center;
     display: flex;
-    gap: 10px;
-    justify-content: flex-start;  
-}
-
-.icons {
+    gap: 20px;
+    justify-content: flex-start;
+    background-color: #F5ECE3; 
+    border-radius: 50px; 
     width: 48px;
     height: 48px;
-    background-color: #F5ECE3;
-    border-radius: 50px;
+
+}
+
+.icons {   
     padding: 12px;
     max-width: fit-content;
     cursor: pointer;
@@ -761,6 +762,9 @@ header {
     color: var(--color-grey);
     text-decoration: none;
 }
+.footer-navigation a:hover{
+    text-decoration: underline;
+}
 
 .footer-products {
     max-width: 250px;
@@ -789,14 +793,17 @@ header {
     display: flex;
     gap: 10px;
     justify-content: flex-start;
-    width: 36px;
-    height: 36px;
 }
 
 .icons-footer p {
     margin-bottom: 0;
 }
-
+.e-mail{
+   background-image: url(../images/e-mail.svg); 
+}
+.whatsapp{
+    background-image: url(../images/whatsapp.svg);
+}
 
 .text-rights {
     display: flex;
@@ -994,12 +1001,24 @@ header {
     transform: translateY(-50%);
     z-index: 10;
 }
-.vertical-class{
+.swiper-wrapper{
     max-width: 70px;
     max-height: 350px;
 }
-
-
+.swiper-scrollbar {
+    background: rgba(0, 0, 0, 0.05);
+    width: 4px;
+    border-radius: 2px;
+  }
+  
+  .swiper-scrollbar-drag {
+    background: #999;
+    border-radius: 2px;
+  }
+  .swiper-slide {
+    height: auto !important;
+  }
+  
 .right-blockcard{
     align-items: center;
     justify-content: center;
@@ -1008,7 +1027,6 @@ header {
 }
 .favorit{
     display: flex;
-    justify-content: center;
     align-items: center;
     max-width: 197px;
 }
@@ -1034,6 +1052,106 @@ header {
     font-size: 48px;
     color: var(--color-grey);
 }
+.price-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 410px;
+}
+.price-calc{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: var(--color-dark-beige);
+    border-radius: 40%;
+    width: 165px;
+    height: 46px;
+}
+.btn-value{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /*занять всю ширину .price-calc */
+    padding: 0 20px; 
+    box-sizing: border-box;
+
+}
+.bnt-minus, .btn-plus{
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: var(--color-grey);
+}
+.btn-value span {
+    font-size: 20px;
+    text-align: center;
+    width: 30px;
+    display: inline-block;
+    color: var(--color-grey);
+}
+.shopping-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-dark-beige);
+    border-radius: 76px;
+    max-width: 410px;
+    height: 80px;
+    margin-top: 30px;
+}
+
+.bagcat-icon{
+    background-image: url(../images/dark-bag-icon.svg);
+}
+
+.shopping-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.shopping-text p{
+    margin: 0;
+}
+.carousel-right{
+    padding-top: 53px;
+}
+.carousel-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 340px;
+}
+.nav-item{
+    background-color: transparent; 
+}
+
+.carousel-right .nav .nav-link.active  {
+    color: var(--color-grey);
+    background-color: var(--color-dark-beige);
+    border-radius: 56px;
+  }
+
+.tab-content p{
+    font-size: 14px;
+    color: var(--color-grey);
+}
+.carousel-right .nav-link{
+    color: var(--color-grey);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (min-width: 576px) {
