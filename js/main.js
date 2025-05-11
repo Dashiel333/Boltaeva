@@ -37,36 +37,104 @@ closeBtn.addEventListener("click", function () {
     searchContainer.classList.remove('active');
     closeMenu.classList.remove('active');
 })
+// Modal window
+
 
 // Dark and light theme
 const toggleBtn = document.querySelector("#theme-toggle");
+
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark');
-    toggleBtn.textContent = '☀️';
+    toggleBtn.classList.remove('light');
+    toggleBtn.classList.add('dark');
 }
 
 toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
 
     const isDark = document.body.classList.contains('dark');
-    toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    toggleBtn.classList.toggle('light', 'islight');
+    toggleBtn.classList.toggle('dark', 'isDark');
 
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 console.log(toggleBtn);
 // Dark and light theme
 
-// Slider
+// counter(счётчик)
+const priceCalc = document.querySelectorAll('[data-priceCalc]');
 
-// Slider
+if (priceCalc.length > 0) {
+    priceCalc.forEach(counter => {
+        counter.addEventListener('click', e => {
+            const target = e.target;
+
+            if (target.closest('.counter-button')) {
+                const wrapper = target.closest('.price-calc');
+                if (!wrapper) return;
+
+                let btnValue = wrapper.querySelector('.input');
+                let value = parseInt(btnValue.textContent);
+
+                if (target.classList.contains('btn-minus')) {
+                    if (value > 0) value--;
+                } else if (target.classList.contains('btn-plus')) {
+                    value++;
+                }
+
+                btnValue.textContent = value;
+            }
+        });
+    });
+}
+
+
+// counter(счётчик)
+
+
 
 // Swiperjs
-const swiper = new Swiper('.swiper', {
-    direction: 'vertical',
+var swiper = new Swiper(".mySwiper", {
     loop: true,
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+    direction: 'vertical',
+    spaceBetween: 4,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
 
+    mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+    },
+});
+var swiper2 = new Swiper(".mySwiper2", {
+    loop: true,
+    direction: 'vertical',
+    spaceBetween: 4,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+        swiper: swiper,
+    },
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+        hide: false,
+    },
+});
 // Swiperjs
+
+// Slider line
+var swiper = new Swiper(".mySwiper2", {
+    direction: 'horizontal',
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
+
+// Slider line
