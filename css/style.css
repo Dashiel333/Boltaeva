@@ -1300,6 +1300,25 @@ header {
 
 /* Slider line  */
 
+/* order page */
+
+.block-order {
+    display: flex;
+    
+}
+.checkout {
+    background-color: var(--color-beige);
+    width: 60%;
+
+
+}
+.order{
+    background-color: var(--color-dark-beige);
+    width: 40%;
+
+}
+
+/* order page */
 
 
 
