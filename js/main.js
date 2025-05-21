@@ -53,8 +53,8 @@ toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
 
     const isDark = document.body.classList.contains('dark');
-    toggleBtn.classList.toggle('light', 'islight');
-    toggleBtn.classList.toggle('dark', 'isDark');
+    toggleBtn.classList.toggle('light');
+    toggleBtn.classList.toggle('dark');
 
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
