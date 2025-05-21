@@ -1264,39 +1264,39 @@ header {
 .swiper {
     width: 100%;
     height: 100%;
-  }
-  
-  .swiper-slide2 {
+}
+
+.swiper-slide2 {
     text-align: center;
     font-size: 18px;
     background: var(--color-beige);
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  /* Второй свайпер — со своими стилями */
-  .mySwiper2 {
+}
+
+/* Второй свайпер — со своими стилями */
+.mySwiper2 {
     max-width: 600px;
     height: 300px;
     margin: 40px auto;
-  }
-  
-  .mySwiper2 .swiper-slide2 {
+}
+
+.mySwiper2 .swiper-slide2 {
     background: var(--color-beige);
     color: #333;
     font-size: 16px;
-  }
-  
-  /* Свои стрелки, если надо */
-  .second-next,
-  .second-prev {
+}
+
+/* Свои стрелки, если надо */
+.second-next,
+.second-prev {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     width: 30px;
     height: 30px;
-  }
-  ✅
+}
+
 
 /* Slider line  */
 
@@ -1304,19 +1304,192 @@ header {
 
 .block-order {
     display: flex;
-    
+    width: 100%;
 }
+
 .checkout {
     background-color: var(--color-beige);
     width: 60%;
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-inline: clamp(20px, 5vw, 70px);
+}
 
+.check-left {
+    width: 65%;
+}
+
+.check-left h3 {
+    font-size: 48px;
+    font-family: var(--font-family-base);
+    color: var(--color-grey);
+    justify-content: flex-start;
+    padding-bottom: 48px;
+}
+
+
+.check-left p {
+    font-size: 13px;
+    font-family: var(--font-family-base);
+    color: #AC8F78;
+    margin-bottom: 8px;
+    justify-content: flex-start;
+}
+
+.check-left input {
+    width: 470px;
+    border: none;
+    border-bottom: 1px solid var(--color-grey);
+    background-color: transparent;
+    padding: 10px 4px;
+    font-size: 16px;
+    font-family: var(--font-family-base);
+    color: var(--color-grey);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.check-left input :focus {
+    border-bottom: 1px solid var(--color-grey);
+}
+
+.checkbox {
+    padding-top: 45px;
+}
+
+.check-right {
+    width: 35%;
+}
+
+.favoritadd {
+    display: flex;
+    align-items: center;
+}
+
+.heart-icon {
+    background-image: url(../images/heart-icon.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 16px 16px;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 24px;
+    border: none;
+    background-color: transparent;
+    font-family: var(--font-family-base);
+    font-size: 14px;
+    color: var(--color-grey);
+    cursor: pointer;
+    white-space: nowrap;
+    height: 16px;
+}
+
+.set-up {
+    padding-top: 52px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    color: var(--color-grey);
+}
+
+.registered-text {
+    font-size: 14px;
+    color: var(--color-grey);
 
 }
-.order{
+
+.left-text {
+    max-width: 287px;
+}
+
+.sign-in {
+    display: flex;
+    align-items: center;
+    max-width: 80px;
+    padding-top: 16px;
+}
+
+.dark-man-icon {
+    background-image: url(../images/dark-man-icon.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 16px 16px;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 24px;
+    gap: 8px;
+    border: none;
+    background-color: transparent;
+    font-family: var(--font-family-base);
+    font-size: 14px;
+    color: var(--color-grey);
+    cursor: pointer;
+    white-space: nowrap;
+    height: 16px;
+}
+
+.dark-man-icon img {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+.choose-text {
+    padding-top: 63px;
+    color: var(--color-grey);
+    font-family: var(--font-family-base);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.shipping {
+    padding-top: 20px;
+    color: var(--color-grey);
+    font-family: var(--font-family-base);
+    font-weight: 14px;
+}
+
+.checkbox-choose {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.container-left {
+    padding-right: 50px;
+
+}
+
+.order {
     background-color: var(--color-dark-beige);
     width: 40%;
+}
+
+.order-box {
+    display: flex;
+    justify-content: space-between;
 
 }
+
+.box-text {
+    max-width: ;
+    padding-top: 50px;
+    max-width: 320px;
+}
+
+.left-block {
+    background-color: var(--color-dark-beige);
+    width: 40%;
+    padding: 80px 60px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+}
+
+
 
 /* order page */
 
