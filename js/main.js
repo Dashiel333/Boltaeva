@@ -126,15 +126,56 @@ var swiper2 = new Swiper(".mySwiper2", {
 });
 // Swiperjs
 
-// Slider line
-var swiper = new Swiper(".mySwiper2", {
-    direction: 'horizontal',
+// // Slider line
+// var swiper = new Swiper(".mySwiper3", {
+//     direction: 'horizontal',
 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+//     navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//     },
+// });
+
+
+// Slider line
+
+var galleryThumbs = new Swiper(".gallery-thumbs", {
+    // centeredSlides: true,
+    // centeredSlidesBounds: true,
+    slidesPerView: 4,
+    // watchOverflow: true,
+    watchSlidesVisibility: true,
+    // watchSlidesProgress: true,
+    direction: 'horizontal',
+    breakpoints: {
+        768: {
+            direction: "vertical",
+        }
+    }
 });
 
+var galleryMain = new Swiper(".gallery-main", {
+    watchOverflow: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    preventInteractionOnTransition: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    thumbs: {
+        swiper: galleryThumbs
+    }
+});
 
-// Slider line
+galleryMain.on('slideChangeTransitionStart', function () {
+    galleryThumbs.slideTo(galleryMain.activeIndex);
+});
+
+galleryThumbs.on('transitionStart', function () {
+    galleryMain.slideTo(galleryThumbs.activeIndex);
+});
