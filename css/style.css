@@ -1342,6 +1342,11 @@ header {
     width: 65%;
 }
 
+.check-leftpart {
+    padding-right: 50px;
+
+}
+
 .check-left h3 {
     font-size: 48px;
     font-family: var(--font-family-base);
@@ -1376,12 +1381,15 @@ header {
     border-bottom: 1px solid var(--color-grey);
 }
 
-.checkbox {
+.checktext {
     padding-top: 45px;
+}
+.checktext label{
+    color: var(--color-grey);
 }
 
 .check-right {
-    width: 35%;
+    padding-left: 50px;
 }
 
 .favoritadd {
@@ -1421,7 +1429,7 @@ header {
 }
 
 .left-text {
-    max-width: 287px;
+    min-width: 287px;
 }
 
 .sign-in {
@@ -1478,6 +1486,23 @@ header {
     margin-top: 16px;
 }
 
+.choose-btn {
+    max-width: 280px;
+    height: 55px;
+    background-color: var(--color-dark-beige);
+    display: flex;
+    align-items: center;
+    padding-left: 23px;
+    color: var(--color-grey);
+    font-family: var(--font-family-base);
+    font-size: 16px;
+    cursor: pointer;
+    background-image: url(../images/arr-choose.svg);
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 10px 12px;
+}
+
 .container-left {
     padding-right: 50px;
 
@@ -1513,7 +1538,16 @@ header {
 
 /* order page */
 
+.hidden {
+    display: none;
+}
 
+.dropdown-menu {
+    border: 1px solid #ccc;
+    background: var(--color-dark-beige);
+    padding: 10px;
+    margin-top: 5px;
+}
 
 
 

@@ -179,3 +179,39 @@ galleryMain.on('slideChangeTransitionStart', function () {
 galleryThumbs.on('transitionStart', function () {
     galleryMain.slideTo(galleryThumbs.activeIndex);
 });
+
+
+// Выпадающее меню на странице Order
+
+const chooseButtons = document.querySelectorAll(".choose-button");
+const dropdownMenu = document.querySelector(".choose-menu");
+const options = document.querySelectorAll(".option");
+
+
+chooseButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        currentButton = button;
+        dropdownMenu.classList.toggle("hidden");
+    });
+});
+
+
+options.forEach(option => {
+    option.addEventListener("click", () => {
+        if (currentButton) {
+            currentButton.textContent = option.textContent;
+            dropdownMenu.classList.add("hidden");
+        }
+    });
+});
+
+
+
+
+// Выпадающее меню на странице Order
+
+
+// Слайдер Wecare
+
+
+// Слайдер Wecare
