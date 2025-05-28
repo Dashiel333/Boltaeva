@@ -96,37 +96,39 @@ if (priceCalc.length > 0) {
 // Swiperjs
 if (document.querySelector(".mySwiper")) {
     var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    direction: 'vertical',
-    spaceBetween: 4,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
+        loop: true,
+        direction: 'vertical',
+        spaceBetween: 4,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
 
-    mousewheel: {
-        forceToAxis: true,
-        sensitivity: 1,
-    },
-});
+        mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+        },
+    });
 }
 if (document.querySelector(".mySwiper2")) {
-var swiper2 = new Swiper(".mySwiper2", {
-    loop: true,
-    direction: 'vertical',
-    spaceBetween: 4,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    thumbs: {
-        swiper: swiper,
-    },
-    scrollbar: {
-        el: '.swiper-scrollbar',
-        draggable: true,
-        hide: false,
-    },
-});
+
+    var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        // direction: 'vertical',
+        spaceBetween: 20,
+        slidesPerView: 5,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+            hide: false,
+        },
+    });
 }
 
 // Swiperjs
@@ -144,38 +146,38 @@ var swiper2 = new Swiper(".mySwiper2", {
 
 // Slider line
 if (document.querySelector(".gallery-thumbs")) {
-var galleryThumbs = new Swiper(".gallery-thumbs", {
-    // centeredSlides: true,
-    // centeredSlidesBounds: true,
-    slidesPerView: 4,
-    // watchOverflow: true,
-    watchSlidesVisibility: true,
-    // watchSlidesProgress: true,
-    direction: 'horizontal',
-    breakpoints: {
-        768: {
-            direction: "vertical",
+    var galleryThumbs = new Swiper(".gallery-thumbs", {
+        // centeredSlides: true,
+        // centeredSlidesBounds: true,
+        slidesPerView: 4,
+        // watchOverflow: true,
+        watchSlidesVisibility: true,
+        // watchSlidesProgress: true,
+        direction: 'horizontal',
+        breakpoints: {
+            768: {
+                direction: "vertical",
+            }
         }
-    }
-});
+    });
 
-var galleryMain = new Swiper(".gallery-main", {
-    watchOverflow: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    preventInteractionOnTransition: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    effect: 'fade',
-    fadeEffect: {
-        crossFade: true
-    },
-    thumbs: {
-        swiper: galleryThumbs
-    }
-});
+    var galleryMain = new Swiper(".gallery-main", {
+        watchOverflow: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        preventInteractionOnTransition: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        thumbs: {
+            swiper: galleryThumbs
+        }
+    });
 }
 
 

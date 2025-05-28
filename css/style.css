@@ -508,7 +508,7 @@ header {
 
 .brows-logo {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -1299,8 +1299,8 @@ header {
 
 /* Второй свайпер — со своими стилями */
 .mySwiper2 {
-    max-width: 600px;
-    height: 300px;
+    /* max-width: 600px; */
+    /* height: 300px; */
     margin: 40px auto;
 }
 
@@ -1712,7 +1712,7 @@ header {
 .ord-card {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     height: 130px;
-    max-width:149px;
+    max-width: 149px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1722,6 +1722,7 @@ header {
     background: var(--color-beige);
     box-shadow: none;
 }
+
 .ord-logo {
     width: 100%;
     height: auto;
@@ -1748,11 +1749,13 @@ header {
     position: relative;
 }
 
-.swiper-wrapper2 {
+
+/* .mySwiper2 .swiper-wrapper {
     display: flex;
     gap: 20px;
-}
+} */
 
+/* 
 .swiper-slide {
     background-color: white;
     padding: 20px;
@@ -1760,28 +1763,28 @@ header {
     width: 220px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     flex-shrink: 0;
-}
-
+} */
+/* 
 .swiper-slide img {
     width: 100%;
     height: auto;
     max-height: 150px;
     object-fit: contain;
     margin-bottom: 10px;
-}
-
+} */
+/* 
 .swiper-slide .title {
     font-size: 16px;
     color: #444;
     margin: 10px 0 4px;
-}
-
+} */
+/* 
 .swiper-slide .price {
     font-size: 15px;
     color: #222;
     font-weight: bold;
-}
-
+} */
+/* 
 .swiper-button-prev.second-prev2,
 .swiper-button-next.second-next2 {
     color: #444;
@@ -1790,20 +1793,19 @@ header {
     height: 36px;
     top: 45%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
+} */
+/* 
 .swiper-button-prev.second-prev2 {
     left: -10px;
-}
-
+} */
+/* 
 .swiper-button-next.second-next2 {
     right: -10px;
-}
+} */
 
-.swiper-pagination2 {
+/* .swiper-pagination2 {
     display: none;
-    /* можно включить если нужно */
-}
+} */
 
 /* Слайдер2 на странице product-card */
 
@@ -1998,7 +2000,7 @@ header {
     margin-right: 15px;
     padding-left: 15px;
 
-.swiper-slide {
+    .swiper-slide {
         display: flex;
         align-items: center;
         justify-content: center;
