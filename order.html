@@ -164,10 +164,18 @@
                             </div>
                             <p class="choose-text">Choose a shipping method</p>
                             <div class="checkbox-choose">
-                                <div class="choose-btn">FedEX</div>
-                                <div class="choose-btn">To door</div>
-                                <p class="choose-text">Choose a shipping method</p>
-                                <div class="checkbox-choose">
+                                <div class="choose-wrapper">
+                                    <div class="choose-btn">FedEX</div>
+                                    <div class="choose-menu hidden">
+                                        <div class="option">DHL Express</div>
+                                        <div class="option">UPS</div>
+                                        <div class="option">TNT</div>
+                                        <div class="option">Courier</div>
+
+                                    </div>
+                                </div>
+                                <div class="choose-wrapper">
+                                    <div class="choose-btn">To door</div>
                                     <div class="choose-menu hidden">
                                         <div class="option">To door</div>
                                         <div class="option">Pick up</div>
@@ -180,12 +188,65 @@
                     </div>
                 </div>
             </div>
-            <div class="left-block">
-                <div class="order-box">
-                    <div class="box-text">
-                        <p>Order</p>
-                        <p>8 products</p>
+            <div class="order-block">
+                <div class="order-small">
+                    <div class="order-box">
+                        <div class="box-text">
+                            <p class="ord-text">Order</p>
+                            <p class="products-text">8 products</p>
+                            <!-- <div class="arrov-order">
+                                Стрелки карусели
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="order-cards">
+                        <div class="ord-swiper ord-swiper">
+                            <div class="ord-swiper-wrapper">
 
+                                <div class="ord-swiper-slide">
+                                    <div class="ord-card product-card">
+                                        <img class="ord-logo" src="./images/Rectangle 19.png" alt="Perfect brows_logo">
+                                        <div class="brows-text"></div>
+                                    </div>
+                                    <div class="ord-card product-card">
+                                        <img class="ord-logo" src="./images/eyebrows-logo.png" alt="Perfect brows_logo">
+                                        <div class="brows-text"></div>
+                                    </div>
+                                    <div class="ord-card product-card">
+                                        <img class="ord-logo" src="./images/bottle-logo.png" alt="Perfect brows_logo">
+                                        <div class="brows-text"></div>
+                                    </div>
+                                    <div class="ord-card product-card">
+                                        <img class="ord-logo" src="./images/eyebrows-logo.png" alt="Perfect brows_logo">
+                                        <div class="brows-text"></div>
+                                    </div>
+                                    <div class="ord-card product-card">
+                                        <img class="ord-logo" src="./images/bottle-logo.png" alt="Perfect brows_logo">
+                                        <div class="brows-text"></div>
+                                    </div>
+                                    <div class="ord-card product-card">
+                                        <img class="ord-logo" src="./images/Rectangle 19.png" alt="Perfect brows_logo">
+                                        <div class="brows-text"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Навигация -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                    <div class="total-text">
+                        <p>Total:</p>
+                        <p>54 €</p>
+                    </div>
+                    <div class="order-wrapper">
+                        <a href="#" class="send-order">
+                            <p>Send your order</p>
+                        </a>
+                        <div class="edit-order">
+                            <p>Edit this order</p>
+                        </div>
                     </div>
                 </div>
             </div>

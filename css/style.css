@@ -3,6 +3,8 @@
     --color-dark-beige: #EEE4DA;
     --color-white: #FFFFFF;
     --color-grey: #555555;
+    --color-edit: #AC8F78;
+
 
     --font-family-base: 'Montserrat', sans-serif;
     --transition-duration: 0.2s;
@@ -1384,7 +1386,8 @@ header {
 .checktext {
     padding-top: 45px;
 }
-.checktext label{
+
+.checktext label {
     color: var(--color-grey);
 }
 
@@ -1464,6 +1467,7 @@ header {
     display: inline-block;
 }
 
+/* dropdown */
 .choose-text {
     padding-top: 63px;
     color: var(--color-grey);
@@ -1472,12 +1476,6 @@ header {
     font-weight: bold;
 }
 
-.shipping {
-    padding-top: 20px;
-    color: var(--color-grey);
-    font-family: var(--font-family-base);
-    font-weight: 14px;
-}
 
 .checkbox-choose {
     display: flex;
@@ -1503,6 +1501,60 @@ header {
     background-size: 10px 12px;
 }
 
+.checkbox-choose {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.choose-wrapper {
+    position: relative;
+    max-width: 280px;
+    width: 100%;
+}
+
+.choose-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    /* ограничиваем по ширине родителя */
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.choose-menu .option {
+    padding: 5px 16px;
+    font-size: 16px;
+    white-space: nowrap;
+    /* предотвращает перенос */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* обрезка с "..." при слишком длинном тексте */
+}
+
+.choose-menu .option:hover {
+    background-color: var(--color-light-beige);
+}
+
+.hidden {
+    display: none;
+}
+
+.shipping {
+    max-width: 243px;
+    padding-top: 20px;
+    color: var(--color-grey);
+    font-family: var(--font-family-base);
+    font-size: 14px;
+}
+
+/* dropdown */
+
 .container-left {
     padding-right: 50px;
 
@@ -1513,6 +1565,14 @@ header {
     width: 40%;
 }
 
+.order-small {
+    max-width: 320px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
 .order-box {
     display: flex;
     justify-content: space-between;
@@ -1520,22 +1580,155 @@ header {
 }
 
 .box-text {
-    max-width: ;
     padding-top: 50px;
     max-width: 320px;
+    display: flex;
+    align-items: center;
 }
 
-.left-block {
+.ord-text {
+    font-size: 36px;
+    font-family: var(--font-family-base);
+    padding-right: 20px;
+}
+
+.products-text {
+    color: var(--color-grey);
+    font-family: var(--font-family-base);
+}
+
+.order-block {
     background-color: var(--color-dark-beige);
     width: 40%;
     padding: 80px 60px;
     box-sizing: border-box;
-    display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
+.order-box {
+    max-width: 320px;
+}
 
+.total-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.total-text p {
+    font-size: 24px;
+
+}
+
+.order-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-order {
+    min-width: 320px;
+    height: 80px;
+    border-radius: 66px;
+    background-color: var(--color-beige);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.send-order p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    font-size: 18px;
+    font-family: var(--font-family-base);
+    position: relative;
+}
+
+.send-order p::after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-image: url("../images/Order-arrow-right.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.edit-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-width: 110px;
+    padding-top: 20px;
+    margin: 0 auto;
+    color: var(--color-edit);
+    font-family: var(--font-family-base);
+    font-size: 14px;
+}
+
+.edit-order p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.edit-order p::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-image: url("../images/pensil-edit.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* Слайдер order */
+.order-cards {
+    padding: 10px;
+    background: transparent;
+}
+
+.ord-swiper {
+    width: 100%;
+    height: auto;
+}
+
+.ord-swiper-slide {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 6px;
+    background: transparent;
+    max-width: 318px;
+}
+
+.ord-card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    height: 130px;
+    max-width:149px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    background: var(--color-beige);
+    box-shadow: none;
+}
+.ord-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Слайдер order */
 /* order page */
 
 .hidden {
@@ -1549,6 +1742,70 @@ header {
     margin-top: 5px;
 }
 
+/* Слайдер2 на странице product-card */
+.mySwiper2 {
+    padding: 40px 20px;
+    position: relative;
+}
+
+.swiper-wrapper2 {
+    display: flex;
+    gap: 20px;
+}
+
+.swiper-slide {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.swiper-slide .title {
+    font-size: 16px;
+    color: #444;
+    margin: 10px 0 4px;
+}
+
+.swiper-slide .price {
+    font-size: 15px;
+    color: #222;
+    font-weight: bold;
+}
+
+.swiper-button-prev.second-prev2,
+.swiper-button-next.second-next2 {
+    color: #444;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    top: 45%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-prev.second-prev2 {
+    left: -10px;
+}
+
+.swiper-button-next.second-next2 {
+    right: -10px;
+}
+
+.swiper-pagination2 {
+    display: none;
+    /* можно включить если нужно */
+}
+
+/* Слайдер2 на странице product-card */
 
 
 
@@ -1741,7 +1998,7 @@ header {
     margin-right: 15px;
     padding-left: 15px;
 
-    .swiper-slide {
+.swiper-slide {
         display: flex;
         align-items: center;
         justify-content: center;

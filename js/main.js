@@ -94,7 +94,8 @@ if (priceCalc.length > 0) {
 
 
 // Swiperjs
-var swiper = new Swiper(".mySwiper", {
+if (document.querySelector(".mySwiper")) {
+    var swiper = new Swiper(".mySwiper", {
     loop: true,
     direction: 'vertical',
     spaceBetween: 4,
@@ -107,6 +108,8 @@ var swiper = new Swiper(".mySwiper", {
         sensitivity: 1,
     },
 });
+}
+if (document.querySelector(".mySwiper2")) {
 var swiper2 = new Swiper(".mySwiper2", {
     loop: true,
     direction: 'vertical',
@@ -124,6 +127,8 @@ var swiper2 = new Swiper(".mySwiper2", {
         hide: false,
     },
 });
+}
+
 // Swiperjs
 
 // // Slider line
@@ -138,7 +143,7 @@ var swiper2 = new Swiper(".mySwiper2", {
 
 
 // Slider line
-
+if (document.querySelector(".gallery-thumbs")) {
 var galleryThumbs = new Swiper(".gallery-thumbs", {
     // centeredSlides: true,
     // centeredSlidesBounds: true,
@@ -171,47 +176,63 @@ var galleryMain = new Swiper(".gallery-main", {
         swiper: galleryThumbs
     }
 });
+}
 
-galleryMain.on('slideChangeTransitionStart', function () {
-    galleryThumbs.slideTo(galleryMain.activeIndex);
-});
-
-galleryThumbs.on('transitionStart', function () {
-    galleryMain.slideTo(galleryThumbs.activeIndex);
-});
 
 
 // Выпадающее меню на странице Order
 
-const chooseButtons = document.querySelectorAll(".choose-button");
-const dropdownMenu = document.querySelector(".choose-menu");
-const options = document.querySelectorAll(".option");
-
+const chooseButtons = document.querySelectorAll(".choose-btn");
 
 chooseButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        currentButton = button;
+    const dropdownMenu = button.nextElementSibling; // локальное меню
+    const options = dropdownMenu.querySelectorAll(".option");
+
+    button.addEventListener("click", (e) => {
+        e.stopPropagation(); // чтобы клик не дошёл до document
+        // Закрываем все открытые меню
+        document.querySelectorAll(".choose-menu").forEach(menu => {
+            if (menu !== dropdownMenu) {
+                menu.classList.add("hidden");
+            }
+        });
+        // Переключаем текущее меню
         dropdownMenu.classList.toggle("hidden");
     });
-});
-
-
-options.forEach(option => {
-    option.addEventListener("click", () => {
-        if (currentButton) {
-            currentButton.textContent = option.textContent;
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            button.textContent = option.textContent;
             dropdownMenu.classList.add("hidden");
-        }
+        });
     });
 });
-
-
+// Скрытие всех меню по клику вне кнопок/меню
+document.addEventListener("click", () => {
+    document.querySelectorAll(".choose-menu").forEach(menu => {
+        menu.classList.add("hidden");
+    });
+});
 
 
 // Выпадающее меню на странице Order
+
+
+
 
 
 // Слайдер Wecare
-
+// new Swiper(".mySwiper2", {
+//     slidesPerView: 4,
+//     spaceBetween: 20,
+//     navigation: {
+//       nextEl: ".second-next2",
+//       prevEl: ".second-prev2"
+//     },
+//     breakpoints: {
+//       768: { slidesPerView: 2 },
+//       1024: { slidesPerView: 3 },
+//       1200: { slidesPerView: 4 }
+//     }
+//   });
 
 // Слайдер Wecare
