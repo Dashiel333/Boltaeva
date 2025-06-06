@@ -222,19 +222,40 @@ document.addEventListener("click", () => {
 
 
 
-// Слайдер Wecare
-// new Swiper(".mySwiper2", {
-//     slidesPerView: 4,
-//     spaceBetween: 20,
-//     navigation: {
-//       nextEl: ".second-next2",
-//       prevEl: ".second-prev2"
-//     },
-//     breakpoints: {
-//       768: { slidesPerView: 2 },
-//       1024: { slidesPerView: 3 },
-//       1200: { slidesPerView: 4 }
-//     }
-//   });
+// Слайдер на странице Order
 
-// Слайдер Wecare
+if (document.querySelector(".ord-swiper")) {
+    const ordSwiper = new Swiper(".ord-swiper", {
+        slidesPerView: 3,
+        grid: {
+            rows: 2,
+            fill: "row"
+        },
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        }
+    });
+}
+
+// Слайдер на странице Order
+
+// Админка
+
+ // например: "Пост сохранен"
+async function fetchPosts() {
+    const response = await fetch("/add-post", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        // body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+    alert(result.message)
+}
+// fetchPosts()
+
+// Админка
