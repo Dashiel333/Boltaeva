@@ -128,8 +128,8 @@ if (document.querySelector(".mySwiper2")) {
     var swiper2 = new Swiper(".mySwiper2", {
         loop: true,
         // direction: 'vertical',
+        slidesPerView: 1,
         spaceBetween: 20,
-        slidesPerView: 5,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -142,6 +142,20 @@ if (document.querySelector(".mySwiper2")) {
             draggable: true,
             hide: false,
         },
+        breakpoints: {
+            1200: {
+                slidesPerView: 5,
+            },
+            992: {
+                slidesPerView: 4,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            540: {
+                slidesPerView: 2,
+            }
+        }
     });
 }
 
@@ -169,7 +183,7 @@ if (document.querySelector(".gallery-thumbs")) {
         // watchSlidesProgress: true,
         direction: 'horizontal',
         breakpoints: {
-            768: {
+            992: {
                 direction: "vertical",
             }
         }
