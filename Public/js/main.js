@@ -10,14 +10,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-document.querySelector(".bourger").addEventListener("click", function () {
-    document.getElementById("menu").classList.add("active");
-    console.log("active");
-});
+if (document.querySelector(".bourger")) {
+    document.querySelector(".bourger").addEventListener("click", function () {
+        document.getElementById("menu").classList.add("active");
+        console.log("active");
+    });
 
-document.getElementById("close").addEventListener("click", function () {
-    document.getElementById("menu").classList.remove("active");
-});
+    document.getElementById("close").addEventListener("click", function () {
+        document.getElementById("menu").classList.remove("active");
+    });
+}
+
+
+
 
 
 
@@ -27,18 +32,23 @@ const openBtn = document.querySelector(".burger-close");
 const closeMenu = document.querySelector(".dark-color");
 const closeBtn = document.querySelector(".search-container .close")
 
-openBtn.addEventListener("click", function () {
-    searchContainer.classList.toggle('active');
-});
+if (openBtn) {
+    openBtn.addEventListener("click", function () {
+        searchContainer.classList.toggle('active');
+    });
 
-closeMenu.addEventListener("click", function () {
-    searchContainer.classList.remove('active');
-    closeMenu.classList.remove('active');
-})
-closeBtn.addEventListener("click", function () {
-    searchContainer.classList.remove('active');
-    closeMenu.classList.remove('active');
-})
+    closeMenu.addEventListener("click", function () {
+        searchContainer.classList.remove('active');
+        closeMenu.classList.remove('active');
+    })
+    closeBtn.addEventListener("click", function () {
+        searchContainer.classList.remove('active');
+        closeMenu.classList.remove('active');
+    })
+}
+
+
+
 // Modal window
 
 
@@ -51,16 +61,20 @@ if (localStorage.getItem('theme') === 'dark') {
     toggleBtn.classList.add('dark');
 }
 
-toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
 
-    const isDark = document.body.classList.contains('dark');
-    toggleBtn.classList.toggle('light');
-    toggleBtn.classList.toggle('dark');
+        const isDark = document.body.classList.contains('dark');
+        toggleBtn.classList.toggle('light');
+        toggleBtn.classList.toggle('dark');
 
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-});
-console.log(toggleBtn);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    console.log(toggleBtn);
+}
+
+
 // Dark and light theme
 
 // counter(счётчик)
@@ -116,8 +130,8 @@ if (document.querySelector(".mySwiper2")) {
     var swiper2 = new Swiper(".mySwiper2", {
         loop: true,
         // direction: 'vertical',
+        slidesPerView: 1,
         spaceBetween: 20,
-        slidesPerView: 5,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -130,6 +144,20 @@ if (document.querySelector(".mySwiper2")) {
             draggable: true,
             hide: false,
         },
+        breakpoints: {
+            1200: {
+                slidesPerView: 5,
+            },
+            992: {
+                slidesPerView: 4,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            540: {
+                slidesPerView: 2,
+            }
+        }
     });
 }
 
@@ -157,7 +185,7 @@ if (document.querySelector(".gallery-thumbs")) {
         // watchSlidesProgress: true,
         direction: 'horizontal',
         breakpoints: {
-            768: {
+            992: {
                 direction: "vertical",
             }
         }
@@ -245,19 +273,68 @@ if (document.querySelector(".ord-swiper")) {
 
 // Админка
 
- // например: "Пост сохранен"
-async function fetchPosts() {
-    const response = await fetch("/add-post", {
+// например: "Пост сохранен"
+async function getProducts() {
+    const response = await fetch("/get-products", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    });
+
+    const result = await response.json();
+    return result
+}
+// getProducts()
+
+async function addProduct(data) {
+    const response = await fetch("/add-product", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        // body: JSON.stringify(formData)
+        body: JSON.stringify({
+            name: data.name,
+            price: data.price,
+            image: data.image,
+            description: data.description
+        })
     });
 
     const result = await response.json();
-    alert(result.message)
+    alert('Tовар успешно добавлен. Ура!)');
 }
-// fetchPosts()
 
-// Админка
+if (document.body.classList.contains('page-index')) {
+    getProducts().then(products => {
+        console.log('products', products)
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            productCard.innerHTML = `
+                <img class="brows-logo" src="./images/${product.image}" alt="${product.name}">
+                <div class="brows-text">
+                    <p>${product.name}</p>
+                    <p> <strong>${product.price} €</strong></p>
+                </div>
+            `;
+            document.querySelector('.js-products').appendChild(productCard);
+        })
+    });
+}
+
+const productFrom = document.querySelector('.js-product-form');
+
+if (productFrom) {
+    productFrom.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(productFrom);
+        const data = Object.fromEntries(formData.entries());
+
+        console.log('data', data)
+        addProduct(data)
+    });
+}
+
+// addProduct()
+
