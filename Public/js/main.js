@@ -19,6 +19,8 @@ document.getElementById("close").addEventListener("click", function () {
     document.getElementById("menu").classList.remove("active");
 });
 
+
+
 // Modal window
 const searchContainer = document.querySelector(".search-container");
 const openBtn = document.querySelector(".burger-close");

@@ -99,6 +99,9 @@ img {
 .bourger span+span {
     margin-top: 10px;
 }
+.bourger-dark span{
+    background: var(--color-grey);
+}
 
 .menu {
     position: fixed;
@@ -308,6 +311,7 @@ img {
 /* Dark-light theme */
 
 .theme-btn {
+    display: flex;
     width: 30px;
     height: 30px;
     background-size: cover;
