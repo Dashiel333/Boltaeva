@@ -335,3 +335,6 @@ if (productFrom) {
 
 // addProduct()
 
+// function accum (str) {}
+
+// accum("abcd") 
