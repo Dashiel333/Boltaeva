@@ -1,53 +1,73 @@
-const express = require(`express`);
+const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 
 const app = express();
-const path = require(`path`);
 
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'Public')));
 
-app.use(express.json()); // так сервер будет понимать json которій отправила из формы
-app.use(express.static(path.join(__dirname, `public`))); //так подключается папка со статистикой HTML,CSS.js
-
-const PORT = 3000;
-const MONGO_URI = 'mongodb://localhost:27017/shopApp';
+const PORT = process.env.PORT || 3000;
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/shopApp';
 
 const Product = require('./models/Product');
 
-// Підключення до MongoDB
-mongoose.connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
-    console.log('✅ Підключено до MongoDB');
-}).catch((err) => {
-    console.error('❌ Помилка підключення до MongoDB:', err);
+let dbConnection;
+
+function connectToDatabase() {
+    if (!dbConnection) {
+        dbConnection = mongoose.connect(MONGO_URI)
+            .then(() => {
+                console.log('MongoDB connected');
+            })
+            .catch((err) => {
+                dbConnection = null;
+                console.error('MongoDB connection error:', err);
+                throw err;
+            });
+    }
+
+    return dbConnection;
+}
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'Public', 'index.html'));
 });
 
 app.get('/get-products', async (req, res) => {
     try {
+        await connectToDatabase();
         const products = await Product.find();
         res.json(products);
     } catch (error) {
-        console.error('❌ Помилка:', error);
-        res.status(500).json({ message: 'Сервер не зміг отримати товари' });
+        console.error('Product fetch error:', error);
+        res.status(500).json({ message: 'Server could not get products' });
     }
 });
 
 app.post('/add-product', async (req, res) => {
-    const { name, price, image, description } = req.body;
-    const product = new Product({ name, price, image, description });
-    await product.save();
-    res.status(201).json(product);
+    try {
+        await connectToDatabase();
+        const { name, price, image, description } = req.body;
+        const product = new Product({ name, price, image, description });
+        await product.save();
+        res.status(201).json(product);
+    } catch (error) {
+        console.error('Product save error:', error);
+        res.status(500).json({ message: 'Product was not saved' });
+    }
 });
 
-// Обработка отправки формы с админки
-app.post(`/add-post`, (req, res) => {
+app.post('/add-post', (req, res) => {
     const { title, content } = req.body;
-    console.log(`Пост получен`, title, content);
-    res.status(200).send({ message: `Пост сохранен` });
+    console.log('Post received', title, content);
+    res.status(200).send({ message: 'Post saved' });
 });
 
-// Запуск сервера
-app.listen(PORT, () => {
-    console.log(`Сервер запущен: http://localhost:${PORT}`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server started: http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
